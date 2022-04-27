@@ -1,0 +1,97 @@
+<div class="container">
+    <div class="carrd mt-5" style="align-items:center;">
+    <div class="card mt-5" style="padding: 20px;">
+        <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+            <div class="form-group">
+                <label for="name">Category:</label>
+                <input type="text" #category (ngModel)="category" name="category" id="category" class="form-control" placeholder="Category">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Price:</label>
+                <input type="text" #count (ngModel)="count" name="count" id="count" class="form-control" placeholder="Price">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Offer:</label>
+                <input type="text" #offer (ngModel)="offer" name="offer" id="offer" class="form-control" placeholder="Offer">
+            </div>
+
+            <div class="form-group">
+                <label for="name">Company Name:</label>
+                <input type="text" #companyName (ngModel)="companyName" name="companyName" id="companyName" class="form-control" placeholder="company Name">
+            </div>
+
+            <div>
+                <input type="submit" value="Add" class="btn btn-primary">
+            </div>
+        </form>
+    </div>
+</div>
+<div>
+    <table class="table table-bordered">
+        <thead class="thead">
+            <tr>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Offer</th>
+                <th>Company Name</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody class="tbody">
+            <tr *ngFor="let coupon of couponDetails">
+                <td>{{coupon.category}}</td>
+                <td>{{coupon.count}}</td>
+                <td>{{coupon.offer}}</td>
+                <td>{{coupon.companyName}}</td>
+                <td><button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="(coupon)">Edit</button></td>
+                <td><button type="button" class="btn btn-danger" (click)="deleteCoupon(coupon)">Delete</button></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Update Coupon</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form #registerForm="ngForm" (ngSubmit)="register(registerForm)" >
+                <div class="form-group">
+                    <label for="name">Category:</label>
+                    <input type="text" #category [(ngModel)]="couponsToUpdate.category" name="category" id="category" class="form-control" placeholder="Category">
+                </div>
+    
+                <div class="form-group">
+                    <label for="name">Price:</label>
+                    <input type="text" #count [(ngModel)]="couponsToUpdate.count" name="count" id="count" class="form-control" placeholder="Price">
+                </div>
+    
+                <div class="form-group">
+                    <label for="name">Offer:</label>
+                    <input type="text" #offer [(ngModel)]="couponsToUpdate.offer" name="offer" id="offer" class="form-control" placeholder="Offer">
+                </div>
+    
+                <div class="form-group">
+                    <label for="name">Company Name:</label>
+                    <input type="text" #companyName [(ngModel)]="couponsToUpdate.companyName" name="companyName" id="companyName" class="form-control" placeholder="company Name">
+                </div>
+    
+                <div>
+                    <input type="submit" value="Update" class="btn btn-primary">
+                </div>
+            </form>
+        </div>
+        
+      </div>
+    </div>
+  </div>

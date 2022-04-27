@@ -1,0 +1,97 @@
+<section class="h-100 bg-dark">
+
+    <!--navbar-->
+    <nav class="navbar navbar-light bg-info">
+        <div class="container-fluid">
+            <a class="navbar-brand" routerLink="/card">Cards</a>
+            <a class="navbar-brand" routerLink="/category">Category</a>
+            <a class="navbar-brand" routerLink="/provider">Brands</a>
+        </div>
+    </nav>
+    
+    <!--category-->
+    <div class="cart-top container-fluid">
+        <div class="container d-flex">
+            <div class="items">
+                <a>
+                    <img src="assets/images/allProducts.jpg" alt="">
+                    <h6>All Coupons</h6>
+                </a>
+            </div>
+            <div class="items">
+                <a>
+                    <img src="assets/images/mobile.jpg" alt="">
+                    <h6>Mobiles</h6>
+                </a>
+            </div>
+            <div class="items">
+                <a>
+                    <img src="assets/images/HA1.jpg" alt="">
+                    <h6>Electronics</h6>
+                </a>
+            </div>
+            <div class="items">
+                <a>
+                    <img src="assets/images/laptop.jpg" alt="">
+                    <h6>Laptops</h6>
+                </a>
+            </div>
+            <div class="items">
+                <a>
+                    <img src="assets/images/mf.jpg" alt="">
+                    <h6>Men Fashion</h6>
+                </a>
+            </div>
+            <div class="items">
+                <a>
+                    <img src="assets/images/p-4.jpg" alt="">
+                    <h6>Women Fashion</h6>
+                </a>
+            </div>
+            <div class="items">
+                <a>
+                    <img src="assets/images/watch.jpg" alt="">
+                    <h6>Watches</h6>
+                </a>
+            </div>
+            <div class="items">
+                <a>
+                    <img src="assets/images/acc.jpg" alt="">
+                    <h6>Accessories</h6>
+                </a>
+            </div>
+            <div class="items">
+                <a>
+                    <img src="assets/images/gro.jpg" alt="">
+                    <h6>Grocery</h6>
+                </a>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+    
+    
+    
+    <!--greed coupons-->
+    <div class="container">
+        <div class="row">
+            <ng-container class="list" *ngFor="let coupon of coupons">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="assets/images/images.png" alt="Card image cap">
+                    <div class="card-body">
+                        <p>Category: {{coupon.category}}</p>
+                        <p>Provider: {{coupon.provider}}</p>
+                        <p>{{coupon.description}}</p>
+                        <p>Price: {{coupon.price}}</p>
+                        <p>Code: {{coupon.code}}</p>
+                        <a class="btn btn-primary" (click)="pay()">BUY NOW!!</a>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+    
+    </section>
+    

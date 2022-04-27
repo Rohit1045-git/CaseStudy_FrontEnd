@@ -1,0 +1,85 @@
+<section class="h-100 bg-dark">
+<div class="cart-top container-fluid">
+    <div class="container d-flex">
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/allProducts.jpg" alt="">
+                <h6>All Coupons</h6>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/mobile.jpg" alt="">
+                <h6>Mobiles</h6>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/HA1.jpg" alt="">
+                <h6>Electronics</h6>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/laptop.jpg" alt="">
+                <h6>Laptops</h6>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/mf.jpg" alt="">
+                <h6>Men Fashion</h6>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/p-4.jpg" alt="">
+                <h6>Women Fashion</h6>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/watch.jpg" alt="">
+                <h6>Watches</h6>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/acc.jpg" alt="">
+                <h6>Accessories</h6>
+            </a>
+        </div>
+        <div class="items">
+            <a>
+                <img class="bg-dark" src="assets/images/gro.jpg" alt="">
+                <h6>Grocery</h6>
+            </a>
+        </div>
+    </div>
+</div>
+
+
+<!-- slide show-->
+
+
+<!--greed coupons   {{coupon.img}} assets/images/mobile.jpg-->
+<div class="container">
+    <div class="row">
+        <ng-container class="list" *ngFor="let coupon of coupons">
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="assets/images/images.png" alt="Card image cap">
+                <div class="card-body">
+                    <p>Category: {{coupon.category}}</p>
+                    <p>Provider: {{coupon.provider}}</p>
+                    <p>{{coupon.description}}</p>
+                    <p>Price: {{coupon.price}}</p>
+                    <a *ngIf="!login.isLoggenIn()" type="buttton" class="btn btn-secondary" routerLink="/jwtlogin">Login</a>
+                    <a *ngIf="login.isLoggenIn()" type="buttton" class="btn btn-primary" (click)="pay(coupon.code)">BUY NOW!!</a>
+                </div>
+            </div>
+        </ng-container>
+    </div>
+</div>
+
+</section>
+

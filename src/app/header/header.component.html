@@ -1,0 +1,94 @@
+<!--navbar-->
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar navbar-dark btn-danger">
+      <!-- <img class="logo" src="assets/images/ondeal11.png" alt="logo">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button> -->
+  
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+      <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <li class="nav-item active">
+          <a class="nav-link bg-black" routerLink="/home">Coupons-Dekho.com<span class="sr-only">(current)</span></a>
+      </li>
+          <li class="nav-item active">
+              <a class="nav-link bg-primary" routerLink="/home">Home<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item active">
+              <div class="dropdown">
+                  <a class="nav-link bg-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Profile
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="text-align:center;">
+                  <li><a class="btn" routerLink="/admin-dashboard">Admin</a></li>
+                  <li><a class="btn" routerLink="/user-dashboard">User</a></li>
+                  </ul>
+              </div>
+          </li>
+          <li class="nav-item active">
+              <a class="nav-link bg-primary" routerLink="/coupons">HotDeals</a>
+          </li>
+          <!-- <li class="nav-item active">
+              <div class="dropdown">
+                  <a class="nav-link bg-primary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                      Search
+                  </a>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" style="text-align:center;">
+                  <li><a class="btn" routerLink="/category">Category</a></li>
+                  <li><a class="btn" routerLink="/provider">Brand</a></li>
+                  </ul>
+              </div>
+          </li> -->
+         <li class="nav-item">
+              <a class="nav-link" routerLink="/about">About</a>
+          </li> 
+          <li class="nav-item active">
+            <a *ngIf="!login.isLoggenIn()" class="nav-link active bg-primary" aria-current="page" routerLink="/signup">Sign-Up</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" routerLink="/partners">Our-Partners</a>
+        </li> -->
+      </ul>
+      <form>
+      <button *ngIf="!login.isLoggenIn()" class="btn btn-success" routerLink="/jwtlogin">Log-in</button>
+      <button *ngIf="login.isLoggenIn()" type="buttton" class="btn btn-danger nav-link bg-white" (click)="logout()">Log-out</button>
+      </form>
+      </div>
+  </nav>
+</header>
+
+
+
+<!--navbar2
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Deals And Couons</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink='/home'>Home</a>
+          </li>
+          <li class="nav-item">
+            <a  class="nav-link active" aria-current="page" routerLink="/admin">Admin DashBoard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="/user">User DashBoard</a>
+          </li>
+
+          <li class="nav-item">
+            <a *ngIf="!login.isLoggenIn()" class="nav-link active" aria-current="page" routerLink="/signup">signup</a>
+          </li>
+         
+          
+        </ul>
+        <button *ngIf="!login.isLoggenIn()" type="buttton" class="btn btn-success" routerLink="/jwtlogin">Login</button>
+        <button *ngIf="login.isLoggenIn()" type="buttton" class="btn btn-danger" (click)="logout()">logout</button>
+      
+    </div>
+    </div>
+  </nav>
+-->

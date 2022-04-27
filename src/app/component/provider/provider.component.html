@@ -1,0 +1,106 @@
+<section class="h-100 bg-dark">
+
+<!--navbar-->
+<nav class="navbar navbar-light bg-info">
+    <div class="container-fluid">
+        <a class="navbar-brand" routerLink="/user-dashboard">Back</a>
+        <a class="navbar-brand" routerLink="/card">Cards</a>
+        <a class="navbar-brand" routerLink="/category">Category</a>
+    </div>
+</nav>
+
+<!--Catalog-->
+<div class="cart-top container-fluid">
+<div class="container d-flex">
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/allProducts.jpg" alt="">
+            <h1>All Coupons</h1>
+        </a>
+    </div>
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/mobile.jpg" alt="">
+            <h1>Mobiles</h1>
+        </a>
+    </div>
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/HA1.jpg" alt="">
+            <h1>Electronics</h1>
+        </a>
+    </div>
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/laptop.jpg" alt="">
+            <h1>Laptops</h1>
+        </a>
+    </div>
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/mf.jpg" alt="">
+            <h1>Men Fashion</h1>
+        </a>
+    </div>
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/p-4.jpg" alt="">
+            <h1>Women Fashion</h1>
+        </a>
+    </div>
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/watch.jpg" alt="">
+            <h1>Watches</h1>
+        </a>
+    </div>
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/acc.jpg" alt="">
+            <h1>Accessories</h1>
+        </a>
+    </div>
+    <div class="items">
+        <a>
+            <img class="bg-dark" src="assets/images/gro.jpg" alt="">
+            <h1>Grocery</h1>
+        </a>
+    </div>
+</div>
+</div>
+
+
+<!--search bar-->
+<div class="container">
+    <div class="row">
+        <!-- <div class="col-lg-9 col-sm-12 mt-5">
+            <input type="text" placeholder="Enter brand" class="form-control" name="provider" [(ngModel)]="provider">
+        </div> -->
+        <div class="col-lg-3 col-sm-12 mt-5">
+            <button type="button" class="btn btn-info" (click) = "searchProvider">Search</button>
+        </div>
+    </div>
+    <br><br>
+
+    <div class="container">
+        <div class="row">
+            <ng-container class="list" *ngFor="let coupon of coupons">
+                <div class="card" style="width: 18rem;">
+                    <img class="card-img-top" src="assets/images/images.png" alt="Card image cap">
+                    <div class="card-body">
+                        <p>{{coupon.category}}</p>
+                        <p>{{coupon.provider}}</p>
+                        <p>{{coupon.description}}</p>
+                        <p>{{coupon.price}}</p>
+                        <a *ngIf="!login.isLoggenIn()" type="buttton" class="btn btn-secondary" routerLink="/jwtlogin">Login</a>
+                    <a *ngIf="login.isLoggenIn()" type="buttton" class="btn btn-primary" (click)="pay()">BUY DEAL !!</a>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+    </div>
+</div>
+</section>
+
+
+
